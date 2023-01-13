@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\owner\\.nuget\\packages\\": {}
+    "C:\\Users\\Trevo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\owner\\Source\\Repos\\WinFormCalculator\\Calculator\\Calculator\\Calculator.csproj",
+      "projectUniqueName": "C:\\Users\\Trevo\\Source\\Repos\\WinFormCalculator\\Calculator\\Calculator\\Calculator.csproj",
       "projectName": "Calculator",
-      "projectPath": "C:\\Users\\owner\\Source\\Repos\\WinFormCalculator\\Calculator\\Calculator\\Calculator.csproj",
-      "packagesPath": "C:\\Users\\owner\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\owner\\Source\\Repos\\WinFormCalculator\\Calculator\\Calculator\\obj\\",
+      "projectPath": "C:\\Users\\Trevo\\Source\\Repos\\WinFormCalculator\\Calculator\\Calculator\\Calculator.csproj",
+      "packagesPath": "C:\\Users\\Trevo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Trevo\\Source\\Repos\\WinFormCalculator\\Calculator\\Calculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Trevo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
