@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Calculator",
+    "\\Calculator\\Calculator"
   ],
-  "SelectedNode": "\\C:\\Users\\kg250\\OneDrive\\Desktop\\BCIT\\Tech Pro\\COMP 3951\\Code\\Calculator",
+  "SelectedNode": "\\Calculator\\Calculator\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
