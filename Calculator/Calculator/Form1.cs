@@ -1,22 +1,16 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace Calculator
 {
     public partial class Form1 : Form
     {
         private bool nonValidCharEntered = false;
 
+        private string storedvalue = string.Empty;
+
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void buttonDigit1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button31_Click(object sender, EventArgs e)
@@ -25,21 +19,6 @@ namespace Calculator
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button33_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button43_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button36_Click(object sender, EventArgs e)
         {
 
         }
@@ -83,6 +62,45 @@ namespace Calculator
             {
                 // Stop the character from being entered into the control since it is non-numerical.
                 e.Handled = true;
+            }
+        }
+
+        private void buttonDigit1_Click_1(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            string s = button.Text;
+            string text = textBox1.Text;
+
+            switch(s)
+            {
+                case "=":
+                    Console.WriteLine("h");
+                    break;
+                case "C":
+                    textBox1.Clear();
+                    break;
+                case "CE":
+                    if (text.Length >= 1)
+                    {
+                        text = text.Substring(0, text.Length - 1);
+                        textBox1.Text = text;
+                    }
+                    else
+                    {
+                    }
+                    break;
+                case "M+":
+                    storedvalue = textBox1.Text;
+                    break;
+                case "MR":
+                    textBox1.AppendText(storedvalue);
+                    break;
+                case "MC":
+                    storedvalue = string.Empty;
+                    break;
+                default:
+                    textBox1.AppendText(s);
+                    break;
             }
         }
     }

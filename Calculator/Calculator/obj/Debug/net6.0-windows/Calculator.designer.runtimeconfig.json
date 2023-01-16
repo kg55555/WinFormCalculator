@@ -13,7 +13,7 @@
     ],
     "additionalProbingPaths": [
       "C:\\Users\\Trevo\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Trevo\\.nuget\\packages"
+      "C:\\Users\\owner\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

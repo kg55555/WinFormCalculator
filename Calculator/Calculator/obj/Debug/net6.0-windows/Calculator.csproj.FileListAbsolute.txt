@@ -32,3 +32,20 @@ C:\Users\kg250\OneDrive\Desktop\BCIT\Tech Pro\COMP 3951\Code\Calculator\Calculat
 C:\Users\kg250\OneDrive\Desktop\BCIT\Tech Pro\COMP 3951\Code\Calculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.pdb
 C:\Users\kg250\OneDrive\Desktop\BCIT\Tech Pro\COMP 3951\Code\Calculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.genruntimeconfig.cache
 C:\Users\kg250\OneDrive\Desktop\BCIT\Tech Pro\COMP 3951\Code\Calculator\Calculator\Calculator\obj\Debug\net6.0-windows\ref\Calculator.dll
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\bin\Debug\net6.0-windows\Calculator.exe
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\bin\Debug\net6.0-windows\Calculator.deps.json
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\bin\Debug\net6.0-windows\Calculator.runtimeconfig.json
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\bin\Debug\net6.0-windows\Calculator.dll
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\bin\Debug\net6.0-windows\Calculator.pdb
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.csproj.AssemblyReference.cache
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.Form1.resources
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.csproj.GenerateResource.cache
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.AssemblyInfoInputs.cache
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.AssemblyInfo.cs
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.dll
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\refint\Calculator.dll
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.pdb
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.genruntimeconfig.cache
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\ref\Calculator.dll
