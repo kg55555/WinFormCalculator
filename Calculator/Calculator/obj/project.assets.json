@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\owner\\.nuget\\packages\\": {}
+    "C:\\Users\\kg250\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\owner\\Source\\Repos\\WinFormCalculator\\Calculator\\Calculator\\Calculator.csproj",
+      "projectUniqueName": "C:\\Users\\kg250\\OneDrive\\Desktop\\BCIT\\Tech Pro\\COMP 3951\\Code\\Calculator\\Calculator\\Calculator\\Calculator.csproj",
       "projectName": "Calculator",
-      "projectPath": "C:\\Users\\owner\\Source\\Repos\\WinFormCalculator\\Calculator\\Calculator\\Calculator.csproj",
-      "packagesPath": "C:\\Users\\owner\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\owner\\Source\\Repos\\WinFormCalculator\\Calculator\\Calculator\\obj\\",
+      "projectPath": "C:\\Users\\kg250\\OneDrive\\Desktop\\BCIT\\Tech Pro\\COMP 3951\\Code\\Calculator\\Calculator\\Calculator\\Calculator.csproj",
+      "packagesPath": "C:\\Users\\kg250\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kg250\\OneDrive\\Desktop\\BCIT\\Tech Pro\\COMP 3951\\Code\\Calculator\\Calculator\\Calculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kg250\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
