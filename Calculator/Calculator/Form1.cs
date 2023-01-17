@@ -80,14 +80,10 @@ namespace Calculator
                     textBox1.Clear();
                     break;
                 case "CE":
-                    if (text.Length >= 1)
-                    {
-                        text = text.Substring(0, text.Length - 1);
-                        textBox1.Text = text;
-                    }
-                    else
-                    {
-                    }
+                    textBox1.Clear();
+                    break;
+                case "<-":
+                    if (text.Length >= 1) textBox1.Text = text[..^1];
                     break;
                 case "M+":
                     storedvalue = textBox1.Text;
