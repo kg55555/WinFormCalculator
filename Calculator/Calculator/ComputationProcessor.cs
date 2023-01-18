@@ -1,39 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
+/// <summary>
+/// Lab 2: Calculator
+/// Author: Kevin Guo A01243552 Trevor Hong A01232148
+/// Date: January 18, 2023 Revision: -
+/// Source: N/A
+/// </summary>
 namespace Calculator
 {
+    /// <summary>
+    /// Equation processing class
+    /// </summary>
     internal class ComputationProcessor
     {
-        private double firstNumber = double.NaN;
-        private double secondNumber = double.NaN;
-        private string prevOperation = "";
+        private double _firstNumber = double.NaN;
+        private double _secondNumber = double.NaN;
+        private string _prevOperation = "";
 
         public ComputationProcessor() { }
 
+        /// <summary>
+        /// Determines how to handle user input and selected operation
+        /// </summary>
         public double GetAnswer(double num, string op) 
         {
             double answer = double.NaN;
-            if (prevOperation == "" && op != "=")
+            if (_prevOperation == "" && op != "=")
             {
-                firstNumber = num;
-                prevOperation = op;
+                _firstNumber = num;
+                _prevOperation = op;
             } else if (op != "=") {
-                secondNumber= num;
-                answer = ProcessEquation(prevOperation);
-                firstNumber = answer;
-                prevOperation = op;
+                _secondNumber= num;
+                _firstNumber = ProcessEquation(_prevOperation);
+                _prevOperation = op;
 
-            } else if (prevOperation != "" && op == "=") { 
-                secondNumber = num;
-                answer = ProcessEquation(prevOperation);
-                firstNumber = double.NaN;
-                secondNumber= double.NaN;
-                prevOperation = "";
+            } else if (_prevOperation != "" && op == "=") { 
+                _secondNumber = num;
+                answer = ProcessEquation(_prevOperation);
+                _firstNumber = double.NaN;
+                _secondNumber= double.NaN;
+                _prevOperation = "";
             } else
             {
                 answer = num;
@@ -42,38 +48,42 @@ namespace Calculator
             return answer;
         }
 
+        /// <summary>
+        /// Calculates answer based on the operation
+        /// </summary>
         private double ProcessEquation(string op)
         {
-            checked
-            {
 
-            double answer = 0;
+            double answer = double.NaN;
             switch(op)
             {
                     case "+":
-                    answer = firstNumber + secondNumber;
+                    answer = _firstNumber + _secondNumber;
                     break;
                     case "-":
-                    answer = firstNumber - secondNumber;
+                    answer = _firstNumber - _secondNumber;
                     break;
                     case "*":
-                    answer = firstNumber * secondNumber;
+                    answer = _firstNumber * _secondNumber;
                     break;
                     case "/":
-                    answer = firstNumber / secondNumber;
+                        if (_secondNumber == 0)
+                        {
+                            MessageBox.Show("Divide by 0 error");
+                            break;
+                        }
+                    answer = _firstNumber / _secondNumber;
                     break;
                     case "%":
-                    answer = firstNumber % secondNumber;
+                    answer = _firstNumber % _secondNumber;
                     break;
                     case "^":
-                    answer = Math.Pow(firstNumber,  secondNumber);
+                    answer = Math.Pow(_firstNumber,  _secondNumber);
                     break;
 
             }
-                Trace.WriteLine(answer);
             return answer;
 
-            }
         }
 
     }
