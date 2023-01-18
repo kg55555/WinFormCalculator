@@ -1,6 +1,8 @@
-﻿using System.Diagnostics;
+﻿using Accessibility;
+using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Calculator
 {
@@ -25,7 +27,14 @@ namespace Calculator
         {
             Button? button = sender as Button;
             string s = button.Text;
-
+            if (s == "π")
+            {
+                textBox1.AppendText(Math.PI.ToString());
+            }
+            if (s == "e")
+            {
+                textBox1.AppendText(Math.E.ToString());
+            }
             textBox1.AppendText(s);
         }
 
@@ -92,14 +101,57 @@ namespace Calculator
 
             try
             {
-                textBox1.Text = processor.GetAnswer(Double.Parse(textBox1.Text), s).ToString();
+                switch (s)
+                {
+                    case "√":
+                        if (textBox1.Text.StartsWith("-"))
+                        {
+                            MessageBox.Show("Cannot take square root of negative number");
+                            break;
+                        }
+                        textBox1.Text = Math.Sqrt(Double.Parse(textBox1.Text)).ToString();
+                        break;
+                    case "SIN":
+                        textBox1.Text = Math.Sin(Double.Parse(textBox1.Text)).ToString();
+                        break;
+                    case "COS":
+                        textBox1.Text = Math.Cos(Double.Parse(textBox1.Text)).ToString();
+                        break;
+                    case "TAN":
+                        textBox1.Text = Math.Tan(Double.Parse(textBox1.Text)).ToString();
+                        break;
+                    case "1/x":
+                        double x = double.Parse(textBox1.Text);
+                        if (textBox1.Text == "0")
+                        {
+                            MessageBox.Show("Divide by 0 error");
+                            break;
+                        }
+                        textBox1.Text = (1 / x).ToString();
+                        break;
+                    case "2nd":
+                        if (buttonDigit4.Text == "4")
+                        {
+                            buttonDigit4.Text = "π";
+                            buttonDigit5.Text = "e";
+                            label2.Text = "4";
+                            label3.Text = "5";
+                        } else
+                        {
+                            buttonDigit4.Text = "4";
+                            buttonDigit5.Text = "5";
+                            label2.Text = "π";
+                            label3.Text = "e";
+                        }
+                        break;
+                    default:
+                        textBox1.Text = processor.GetAnswer(Double.Parse(textBox1.Text), s).ToString();
+                        break;
+                }
             } catch (FormatException)
             {
                 MessageBox.Show("Number is in an incorrect format");
-            }
-
-            
-            
+            } 
             
         }
     }
