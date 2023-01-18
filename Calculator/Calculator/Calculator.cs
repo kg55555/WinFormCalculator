@@ -14,7 +14,7 @@ namespace Calculator
     public partial class Calculator : Form
     {
 
-        private string _storedvalue = string.Empty;
+        private double _storedvalue = 0;
         private ComputationProcessor _processor = new();
 
         public Calculator()
@@ -92,13 +92,13 @@ namespace Calculator
                     if (text.Length >= 1) inputTextBox.Text = text[..^1];
                     break;
                 case "M+":
-                    _storedvalue = inputTextBox.Text;
+                    _storedvalue += double.Parse(inputTextBox.Text);
                     break;
                 case "MR":
-                    inputTextBox.Text = _storedvalue;
+                    inputTextBox.Text = _storedvalue.ToString();
                     break;
                 case "MC":
-                    _storedvalue = string.Empty;
+                    _storedvalue = 0;
                     break;
                 case "OFF":
                     DisableControls(this);
