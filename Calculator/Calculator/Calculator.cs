@@ -92,7 +92,7 @@ namespace Calculator
                     if (text.Length >= 1) inputTextBox.Text = text[..^1];
                     break;
                 case "M+":
-                    _storedvalue += double.Parse(inputTextBox.Text);
+                    if (inputTextBox.Text == "") { } else { _storedvalue += double.Parse(inputTextBox.Text); }
                     break;
                 case "MR":
                     inputTextBox.Text = _storedvalue.ToString();
