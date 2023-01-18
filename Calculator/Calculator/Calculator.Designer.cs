@@ -128,6 +128,7 @@
             this.cosButton.TabIndex = 38;
             this.cosButton.Text = "COS";
             this.cosButton.UseVisualStyleBackColor = true;
+            this.cosButton.Click += new System.EventHandler(this.OperatorClick);
             // 
             // addButton
             // 
@@ -157,6 +158,7 @@
             this.tanButton.TabIndex = 40;
             this.tanButton.Text = "TAN";
             this.tanButton.UseVisualStyleBackColor = true;
+            this.tanButton.Click += new System.EventHandler(this.OperatorClick);
             // 
             // fractionButton
             // 
@@ -186,6 +188,7 @@
             this.sinButton.TabIndex = 39;
             this.sinButton.Text = "SIN";
             this.sinButton.UseVisualStyleBackColor = true;
+            this.sinButton.Click += new System.EventHandler(this.OperatorClick);
             // 
             // exponentButton
             // 

@@ -104,7 +104,7 @@ namespace Calculator
                 switch (s)
                 {
                     case "√":
-                        if (textBox1.Text.StartsWith("-"))
+                        if (Double.Parse(textBox1.Text) < 0)
                         {
                             MessageBox.Show("Cannot take square root of negative number");
                             break;
@@ -144,6 +144,8 @@ namespace Calculator
                             label3.Text = "e";
                         }
                         break;
+                    case "/":
+
                     default:
                         textBox1.Text = processor.GetAnswer(Double.Parse(textBox1.Text), s).ToString();
                         break;
