@@ -66,8 +66,10 @@
             this.buttonDigit3 = new System.Windows.Forms.Button();
             this.buttonDigit1 = new System.Windows.Forms.Button();
             this.inputTextBox = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -479,11 +481,22 @@
             this.inputTextBox.WordWrap = false;
             this.inputTextBox.TextChanged += new System.EventHandler(this.TextBoxTextChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(106, 572);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(429, 158);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 518);
+            this.ClientSize = new System.Drawing.Size(630, 847);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.inputTextBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -499,6 +512,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,5 +557,6 @@
         private Label label2;
         private Label label3;
         private Button button1;
+        private PictureBox pictureBox1;
     }
 }

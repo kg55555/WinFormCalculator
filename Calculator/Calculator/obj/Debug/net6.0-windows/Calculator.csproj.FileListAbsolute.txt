@@ -49,3 +49,4 @@ C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\ne
 C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\ref\Calculator.dll
 C:\Users\kg250\OneDrive\Desktop\BCIT\Tech Pro\COMP 3951\Code\Calculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.Calculator.resources
 C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.Calculator.resources
+C:\Users\Trevo\source\repos\WinFormCalculator\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.Properties.Resources.resources
