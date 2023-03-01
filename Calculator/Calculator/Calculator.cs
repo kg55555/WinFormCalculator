@@ -14,8 +14,9 @@ namespace Calculator
     public partial class Calculator : Form
     {
 
-        private double _storedvalue = 0;
+        private Queue<double> _storedvalue = new();
         private ComputationProcessor _processor = new();
+        
 
         public Calculator()
         {
@@ -23,19 +24,29 @@ namespace Calculator
         }
 
         /// <summary>
-        /// Controls digit button behaviour by appending the digit or replacing input box with a constant
+        /// Event handler for clicking a digit button
         /// </summary>
         private void DigitButtonClick(object sender, EventArgs e)
+        {
+            DigitButtonClickFunc(sender);
+        }
+
+        /// <summary>
+        /// Controls digit button behaviour by appending the digit or replacing input box with a constant
+        /// </summary>
+        public void DigitButtonClickFunc(object sender)
         {
             Button? button = sender as Button;
             string s = button.Text;
             if (s == "π")
             {
                 inputTextBox.Text = Math.PI.ToString();
-            } else if (s == "e")
+            }
+            else if (s == "e")
             {
                 inputTextBox.Text = Math.E.ToString();
-            } else
+            }
+            else
             {
                 inputTextBox.AppendText(s);
             }
@@ -46,10 +57,19 @@ namespace Calculator
         /// </summary>
         private void PosNegButtonClick(object sender, EventArgs e)
         {
+            PosNegButtonClickFunc(sender);
+        }
+
+        /// <summary>
+        /// Positive or negative button click function, adds a negative sign or removes it from the beginning
+        /// </summary>
+        private void PosNegButtonClickFunc(object sender)
+        {
             if (inputTextBox.Text.Length >= 1 && inputTextBox.Text.Substring(0, 1) == "-")
             {
                 inputTextBox.Text = inputTextBox.Text[1..];
-            } else
+            }
+            else
             {
                 inputTextBox.Text = "-" + inputTextBox.Text;
             }
@@ -59,6 +79,14 @@ namespace Calculator
         /// Santizes text input for the text box by removing illegal chars. Also removes extra periods
         /// </summary>
         private void TextBoxTextChanged(object sender, EventArgs e)
+        {
+            TextBoxTextChangedFunc(sender);
+        }
+
+        /// <summary>
+        /// Santizes text input for the text box by removing illegal chars. Also removes extra periods
+        /// </summary>
+        public void TextBoxTextChangedFunc(object sender)
         {
             inputTextBox.Text = Regex.Replace(inputTextBox.Text, "[^0-9-E.+∞]", "");
 
@@ -74,6 +102,11 @@ namespace Calculator
         /// Control buttons click handler
         /// </summary>
         private void ControlButtonClick(object sender, EventArgs e)
+        {
+            ControlButtonClickFunc(sender);
+        }
+
+        private void ControlButtonClickFunc(object sender)
         {
             Button? button = sender as Button;
             string s = button.Text;
@@ -92,13 +125,13 @@ namespace Calculator
                     if (text.Length >= 1) inputTextBox.Text = text[..^1];
                     break;
                 case "M+":
-                    if (inputTextBox.Text == "") { } else { _storedvalue += double.Parse(inputTextBox.Text); }
+                    if (inputTextBox.Text != "") _storedvalue.Enqueue(double.Parse(inputTextBox.Text));
                     break;
                 case "MR":
-                    inputTextBox.Text = _storedvalue.ToString();
+                    inputTextBox.Text = _storedvalue.Count > 0 ? _storedvalue.Dequeue().ToString() : inputTextBox.Text;
                     break;
                 case "MC":
-                    _storedvalue = 0;
+                    _storedvalue = new();
                     break;
                 case "OFF":
                     DisableControls(this);
@@ -120,6 +153,14 @@ namespace Calculator
         /// Operator buttons click handler
         /// </summary>
         private void OperatorClick(object sender, EventArgs e)
+        {
+            OperatorClickFunc(sender);
+        }
+
+        /// <summary>
+        /// Operator buttons click handler
+        /// </summary>
+        public void OperatorClickFunc(object sender)
         {
             Button? button = sender as Button;
             string s = button.Text;
@@ -161,7 +202,8 @@ namespace Calculator
                             buttonDigit5.Text = "e";
                             label2.Text = "4";
                             label3.Text = "5";
-                        } else
+                        }
+                        else
                         {
                             buttonDigit4.Text = "4";
                             buttonDigit5.Text = "5";
@@ -175,11 +217,11 @@ namespace Calculator
                         inputTextBox.Text = _processor.GetAnswer(Double.Parse(inputTextBox.Text), s).ToString();
                         break;
                 }
-            } catch (FormatException)
+            }
+            catch (FormatException)
             {
                 MessageBox.Show("Number is in an incorrect format");
-            } 
-            
+            }
         }
 
         /// <summary>
@@ -187,12 +229,15 @@ namespace Calculator
         /// </summary>
         private void Calculator_KeyDown(object sender, KeyEventArgs e)
         {
+            CalculatorKeyDownFunc(sender, e);
+        }
+
+        private void CalculatorKeyDownFunc(object sender, KeyEventArgs e) {
             if (ActiveControl.Name != inputTextBox.Name)
             {
                 inputTextBox.Select();
                 inputTextBox.AppendText(e.KeyData.ToString());
             }
-           
         }
 
         /// <summary>
@@ -209,6 +254,10 @@ namespace Calculator
         /// </summary>
         private void DisableControls(Control con)
         {
+            _storedvalue = new();
+            _processor = new();
+            inputTextBox.Text = "";
+
             foreach (Control c in con.Controls)
             {
                 DisableControls(c);

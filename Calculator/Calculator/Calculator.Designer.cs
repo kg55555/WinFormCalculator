@@ -529,7 +529,7 @@
         private Button onButton;
         private Button recallMemoryButton;
         private Button addMemoryButton;
-        private Button decimalButton;
+        public Button decimalButton;
         private Button buttonDigit0;
         private Button posNegButton;
         private Button buttonDigit8;
@@ -537,7 +537,7 @@
         private Button buttonDigit7;
         private Button buttonDigit6;
         private Button buttonDigit5;
-        private Button buttonDigit4;
+        public Button buttonDigit4;
         private Button buttonDigit2;
         private Button buttonDigit3;
         private Button buttonDigit1;
@@ -552,11 +552,11 @@
         private Button divideButton;
         private Button multiplyButton;
         private Button subtractButton;
-        private TextBox inputTextBox;
+        public TextBox inputTextBox;
         private Button enterButton;
         private Label label2;
         private Label label3;
-        private Button button1;
+        public Button button1;
         private PictureBox pictureBox1;
     }
 }
