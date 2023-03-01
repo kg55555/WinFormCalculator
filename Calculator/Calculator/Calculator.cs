@@ -128,10 +128,10 @@ namespace Calculator
                     if (inputTextBox.Text != "") _storedvalue.Enqueue(double.Parse(inputTextBox.Text));
                     break;
                 case "MR":
-                    inputTextBox.Text = _storedvalue.Count > 0 ? _storedvalue.Dequeue().ToString() : inputTextBox.Text;
+                    inputTextBox.Text = _storedvalue.Count > 0 ? _storedvalue.Peek().ToString() : inputTextBox.Text;
                     break;
                 case "MC":
-                    _storedvalue = new();
+                    var _ = _storedvalue.Count > 0 ? _storedvalue.Dequeue().ToString() : "";
                     break;
                 case "OFF":
                     DisableControls(this);
