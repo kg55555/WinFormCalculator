@@ -63,7 +63,7 @@ namespace Calculator
         /// <summary>
         /// Positive or negative button click function, adds a negative sign or removes it from the beginning
         /// </summary>
-        private void PosNegButtonClickFunc(object sender)
+        public void PosNegButtonClickFunc(object sender)
         {
             if (inputTextBox.Text.Length >= 1 && inputTextBox.Text.Substring(0, 1) == "-")
             {
@@ -106,7 +106,7 @@ namespace Calculator
             ControlButtonClickFunc(sender);
         }
 
-        private void ControlButtonClickFunc(object sender)
+        public void ControlButtonClickFunc(object sender)
         {
             Button? button = sender as Button;
             string s = button.Text;

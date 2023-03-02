@@ -11,7 +11,7 @@ namespace Calculator
     /// <summary>
     /// Equation processing class
     /// </summary>
-    internal class ComputationProcessor
+    public class ComputationProcessor
     {
         private double _firstNumber = double.NaN;
         private double _secondNumber = double.NaN;

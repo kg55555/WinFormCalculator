@@ -41,5 +41,57 @@ namespace Calculator.Tests
             calculator.OperatorClickFunc(calculator.button1);
             Assert.AreEqual("4", calculator.buttonDigit4.Text);
         }
+
+
+        //Tests the GetAnswer method of the ComputationProcessor class
+        [TestMethod]
+        public void TestGetAnswer()
+        {
+            ComputationProcessor test = new();
+
+            //One Value
+            Assert.AreEqual(3, test.GetAnswer(3, "="));
+
+            //Intermediate value
+            Assert.AreEqual(double.NaN, test.GetAnswer(4, "+"));
+
+            //Two Values
+            Assert.AreEqual(10, test.GetAnswer(3, "="));
+
+        }
+
+        //Tests the Square root input
+        [TestMethod]
+        public void TestSquareRoot()
+        {
+            calculator.inputTextBox.Text = "";
+            //Negative
+            calculator.DigitButtonClickFunc(calculator.buttonDigit5);
+            calculator.PosNegButtonClickFunc(calculator.posNegButton);
+            Assert.AreEqual(double.NaN, Math.Sqrt(Convert.ToDouble(calculator.inputTextBox.Text)));
+
+            //Zero
+            calculator.DigitButtonClickFunc(calculator.buttonDigit0);
+            Assert.AreEqual(0, Math.Sqrt(Convert.ToDouble(calculator.inputTextBox.Text)));
+
+            //Positive
+            calculator.DigitButtonClickFunc(calculator.buttonDigit4);
+            Assert.AreEqual(4, Math.Sqrt(Convert.ToDouble(calculator.inputTextBox.Text)));
+        }
+
+        //Tests the add memory function
+        [TestMethod]
+        public void TestMemory()
+        {
+            calculator.inputTextBox.Text = "55";
+            calculator.ControlButtonClickFunc(calculator.addMemoryButton);
+
+            calculator.inputTextBox.Text = "44";
+            calculator.ControlButtonClickFunc(calculator.addMemoryButton);
+
+            calculator.ControlButtonClickFunc(calculator.recallMemoryButton);
+            Assert.AreEqual(55, Double.Parse(calculator.inputTextBox.Text));
+
+        }
     }
 }
