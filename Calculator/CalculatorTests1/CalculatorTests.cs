@@ -56,7 +56,7 @@ namespace Calculator.Tests
             Assert.AreEqual(double.NaN, test.GetAnswer(4, "+"));
 
             //Two Values
-            Assert.AreEqual(10, test.GetAnswer(3, "="));
+            Assert.AreEqual(7, test.GetAnswer(3, "="));
 
         }
 
@@ -70,13 +70,17 @@ namespace Calculator.Tests
             calculator.PosNegButtonClickFunc(calculator.posNegButton);
             Assert.AreEqual(double.NaN, Math.Sqrt(Convert.ToDouble(calculator.inputTextBox.Text)));
 
+            calculator.inputTextBox.Text = "";
+
             //Zero
             calculator.DigitButtonClickFunc(calculator.buttonDigit0);
             Assert.AreEqual(0, Math.Sqrt(Convert.ToDouble(calculator.inputTextBox.Text)));
 
+            calculator.inputTextBox.Text = "";
+
             //Positive
             calculator.DigitButtonClickFunc(calculator.buttonDigit4);
-            Assert.AreEqual(4, Math.Sqrt(Convert.ToDouble(calculator.inputTextBox.Text)));
+            Assert.AreEqual(2, Math.Sqrt(Convert.ToDouble(calculator.inputTextBox.Text)));
         }
 
         //Tests the add memory function
